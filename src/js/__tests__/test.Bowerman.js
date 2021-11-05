@@ -1,5 +1,5 @@
 import Bowerman from '../Bowerman';
-import Character from '../Character';
+
 test('проверка персонажа Bowerman', () => {
   const received = new Bowerman('Alex', 'Bowman');
   const expectedBowerman = {
@@ -29,13 +29,13 @@ test('проверка метода damage(points)', () => {
   const expectedDamage = {
     name: 'Alex', type: 'Bowman', health: 62.5, level: 1, attack: 25, defence: 25,
   };
-  received.damage(50)
+  received.damage(50);
   expect(received).toEqual(expectedDamage);
 });
 
 test('проверка метода damage(points) когда health <= 0', () => {
   const testDamageThrow = new Bowerman('Alex', 'Bowman');
   testDamageThrow.health = -1;
-  testDamageThrow.damage(50)
+  testDamageThrow.damage(50);
   expect(testDamageThrow.health).toBe(-1);
 });
